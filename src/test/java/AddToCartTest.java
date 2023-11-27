@@ -22,7 +22,6 @@ public class AddToCartTest extends BaseTest{
         homeStorePage=new HomeStorePage(driver);
         shopPage = new ShopPage(driver);
 
-
         homeStorePage.clickShopButton();
         shopPage.clickAddtoCart();
         waitForElementVisibility(driver,shopPage.getElement(), Duration.ofSeconds(3));
