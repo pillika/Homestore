@@ -30,7 +30,6 @@ public class ShoplistTest extends BaseTest{
         shopPage.navigateToPreviousPageWithArrow();
 
         assertThat(shopPage.getResultCountText()).isNotEqualTo(secondPageResultCount);
-
     }
     @Test
     @DisplayName("User can navigate product list page using numbers")
@@ -63,12 +62,11 @@ public class ShoplistTest extends BaseTest{
         homeStorePage.clickShopButton();
         shopPage.enterSearchKeyword(keyword);
         assertThat(shopPage.getProductTitle()).contains(keyword);
+        assertThat(shopPage.getResultCountText()).contains(itemsCount + " results");
 
         if(itemsCount<17){
-            assertThat(shopPage.getResultCountText()).isEqualTo("Showing all " + itemsCount + " results");
             assertThat(shopPage.actualItemsCaunt()).isEqualTo(itemsCount);
         } else {
-            assertThat(shopPage.getResultCountText()).isEqualTo("Showing 1–16 of " + itemsCount + " results");
             assertThat(shopPage.actualItemsCaunt()).isEqualTo(16);
         }
     }

@@ -16,7 +16,6 @@ WebElement shopButton;
 public void clickShopButton() {
     shopButton.click();
 }
-    public void clickMyAccountLink() {
-        myAccountLink.click();
+    public void clickMyAccountLink() {myAccountLink.click();
     }
 }

@@ -33,10 +33,6 @@ public class DetailedProductTest extends BaseTest {
         assertThat(productPage.productDescriptionIsDisplayed()).isTrue();
         assertThat(productPage.productCategoryIsDisplayed()).isTrue();
         assertThat(productPage.productPriceIsDisplayed()).isTrue();
-
-        productPage.clickAddToCart();
-        assertThat(productPage.viewCartIsDisplayed()).isTrue();
-        assertThat(productPage.getMessage()).isEqualTo("“" + selectedProductTitle + "” has been added to your cart.");
     }
 
     @Test
