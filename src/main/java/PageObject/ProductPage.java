@@ -10,7 +10,6 @@ public class ProductPage extends BasePage{
     public ProductPage(WebDriver driver) {
         super(driver);
     }
-    Actions actions =new Actions(driver);
     @FindBy(xpath = "//*[@id=\"main\"]//h1")
     WebElement productTitle;
     @FindBy(css = "#tab-description")
@@ -27,17 +26,11 @@ public class ProductPage extends BasePage{
     WebElement message;
     @FindBy(xpath = "//div[@class='quantity']/input")
     WebElement amount;
-public String getProductsPrice(){
-    return productPrice.getText();
-}
     public String getMessage() {
-
         String[] fullMessage = message.getText().split("\n");
         return fullMessage[1];
     }
-    public boolean viewCartIsDisplayed() {
-        return viewCart.isDisplayed();
-    }
+    public boolean viewCartIsDisplayed() {return viewCart.isDisplayed();}
     public void clickAddToCart() {
         addToCart.click();
     }
@@ -50,50 +43,29 @@ public String getProductsPrice(){
     public boolean productDescriptionIsDisplayed() {
         return productDescription.isDisplayed();
     }
-
-    public String getProductTitle() {
-        return productTitle.getText();
-    }
-
+    public String getProductTitle() {return productTitle.getText();}
     public void enterAmount(String quantity) {
         amount.sendKeys(quantity);
     }
-
-    public void clearAmount() {
-        amount.clear();
-    }
-
-    public void clickAmount() {
-        amount.click();
-    }
-
+    public void clearAmount() {amount.clear();}
+    public void clickAmount() {amount.click();}
     public void clickArrowUP() {
         amount.sendKeys(Keys.ARROW_UP);
     }
-
     public void clickEnter() {
         amount.sendKeys(Keys.ENTER);
     }
-
     public void clickArrowDOWN() {
         amount.sendKeys(Keys.ARROW_DOWN);
     }
-
     public void clickBackSpace() {
         amount.sendKeys(Keys.BACK_SPACE);
     }
-
-    public void moveLeft() {
-        amount.sendKeys(Keys.ARROW_LEFT);
-    }
-
+    public void moveLeft() {amount.sendKeys(Keys.ARROW_LEFT);}
     public void clickDelete() {
         amount.sendKeys(Keys.DELETE);
     }
-
     public void enterAdditionalNumber(String quantity) {
         amount.sendKeys(quantity);
     }
-
-
 }

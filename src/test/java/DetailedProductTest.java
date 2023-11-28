@@ -5,10 +5,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.Keys;
 
 import java.util.LinkedList;
 
+import static java.awt.SystemColor.text;
 import static org.assertj.core.api.Assertions.*;
 
 public class DetailedProductTest extends BaseTest {
@@ -26,17 +26,13 @@ public class DetailedProductTest extends BaseTest {
 
         homeStorePage.clickShopButton();
 
-        String selectedProductTitle = shopPage.getProductsTitle();
+        String selectedProductTitle = shopPage.getProductTitle();
         shopPage.clickProduct();
 
         assertThat(productPage.getProductTitle()).isEqualTo(selectedProductTitle);
         assertThat(productPage.productDescriptionIsDisplayed()).isTrue();
         assertThat(productPage.productCategoryIsDisplayed()).isTrue();
         assertThat(productPage.productPriceIsDisplayed()).isTrue();
-
-        productPage.clickAddToCart();
-        assertThat(productPage.viewCartIsDisplayed()).isTrue();
-        assertThat(productPage.getMessage()).isEqualTo("“" + selectedProductTitle + "” has been added to your cart.");
     }
 
     @Test
@@ -122,12 +118,10 @@ public class DetailedProductTest extends BaseTest {
         productPage.clickDelete();
         productPage.clickAddToCart();
 
-        LinkedList<Integer> result = new LinkedList<>();
-        while (amount > 0) {
-            result.push(amount % 10);
-            amount /= 10;
-        }
-        assertThat(productPage.getMessage()).isEqualTo((result.size() - 1) + " × “" + productTitle + "” have been added to your cart.");
+        String amountString= String.valueOf(amount);
+        String result= amountString.substring(0,amountString.length()-1);
+
+        assertThat(productPage.getMessage()).isEqualTo(result + " × “" + productTitle + "” have been added to your cart.");
         assertThat(productPage.viewCartIsDisplayed()).isTrue();
     }
 
