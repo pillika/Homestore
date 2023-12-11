@@ -10,6 +10,11 @@ public class CartPage extends BasePage{
     }
     @FindBy(css = ".entry-title")
     WebElement pageTitle;
+    @FindBy(css = ".checkout-button")
+    WebElement checkoutButton;
+    public void clickCheckoutButton() {
+        checkoutButton.click();
+    }
     public boolean  pageTitleIsDisplayed() {
         return pageTitle.isDisplayed();
     }

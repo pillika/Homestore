@@ -109,6 +109,16 @@ public class ShopPage extends BasePage{
     public String getItemcount() {
         return itemInCartCount.getText();
     }
+    public Float getProductPriceFloatValue(String element) {
+        String numericPrice = element.substring(1);
+        return Float.parseFloat(numericPrice);
+    }
+    public String multipliedPrice(Float price, Float amount) {
+        return  String.format("%.2f",price*amount).replace(",",".");
+    }
+    public String addedPrice(Float price, Float price2){
+        return String.format("%.2f",price+price2).replace(",",".");
+    }
     public String getProductPrice(){
         return productPrice.getText();
     }

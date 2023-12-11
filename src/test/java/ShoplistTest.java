@@ -82,7 +82,6 @@ public class ShoplistTest extends BaseTest{
 
         assertThat(productPage.getProductTitle()).contains("lamp");
     }
-
     @Test
     @DisplayName("Meniu search bar test with no match")
     public void searchBarNoResultsTest() {

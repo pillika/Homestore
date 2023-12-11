@@ -1,0 +1,15 @@
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Invalid payment method.
+"",Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Billing First name is a required field.
+Petras, "", Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Billing Last name is a required field.
+Petras, Petraitis, "",Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Invalid payment method.
+Petras, Petraitis, Petraitis ir Co,Lithuania, "",10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Billing Street address is a required field.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,"", Domeikava, Kauno raj., LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Invalid payment method.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, "", Kauno raj., LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Billing Town / City is a required field.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, "", LT-55129, 8-600-0000, petras.petraitis@pastas.lt, Invalid payment method.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., "", 8-600-0000, petras.petraitis@pastas.lt, Billing Postcode / ZIP is a required field.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, "", petras.petraitis@pastas.lt, Billing Phone is a required field.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, "", Billing Email address is a required field.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129,55lkm698, petras.petraitis@pastas.lt, Billing Phone is not a valid phone number.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, @589236, petras.petraitis@pastas.lt, Billing Phone is not a valid phone number.
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, @kjklkl, Invalid billing email address
+Petras, Petraitis, Petraitis ir Co,Lithuania, Pievu,10-2, Domeikava, Kauno raj., LT-55129, 8-600-0000, skjfhksrfknrf, Invalid billing email address

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Utils {
-    public static final Duration DEFAULT_DURATION = Duration.ofSeconds(2); //[panaudoti
+    public static final Duration DEFAULT_DURATION = Duration.ofSeconds(2);
 
     public static void waitForElementVisibility(WebDriver driver, WebElement element, Duration duration) {
         WebDriverWait wait = new WebDriverWait(driver, duration);

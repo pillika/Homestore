@@ -1,12 +1,8 @@
 import PageObject.CartPage;
 import PageObject.HomeStorePage;
 import PageObject.ShopPage;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.time.Duration;
-
 import static Utils.wait.Utils.DEFAULT_DURATION;
 import static Utils.wait.Utils.waitForElementVisibility;
 import static org.assertj.core.api.Assertions.*;
@@ -41,12 +37,10 @@ public class AddToCartTest extends BaseTest{
         waitForElementVisibility(driver,shopPage.getElement(), DEFAULT_DURATION);
         assertThat(shopPage.viewCartIsDisplayed()).isTrue();
 
-        String numericPrice= shopPage.getProductPrice().substring(1);
-        float price = Float.parseFloat(numericPrice); //pabandome iskelti i atskira metoda
-        float setAmount=2;
-        String calculatedPrice = String.format("%.2f",price*setAmount).replace(",",".");
+        Float price = shopPage.getProductPriceFloatValue(shopPage.getProductPrice());
+        String multipliedPrice = shopPage.multipliedPrice(price, 2F);
 
-        assertThat(shopPage.getCartPrice()).isEqualTo("£" +calculatedPrice+"");
+        assertThat(shopPage.getCartPrice()).isEqualTo("£" +multipliedPrice+"");
         assertThat(shopPage.getItemcount()).isEqualTo("2 items");
     }
     @Test
@@ -62,11 +56,10 @@ public class AddToCartTest extends BaseTest{
         waitForElementVisibility(driver,shopPage.getElement(), DEFAULT_DURATION);
         assertThat(shopPage.bothViewCartIsDisplayed()).isTrue();
 
-        String numericPrice= shopPage.getProductPrice().substring(1);
-        float price = Float.parseFloat(numericPrice);
-        String secondNumericPrice = shopPage.getSecondProductPrice().substring(1);
-        float price2 = Float.parseFloat(secondNumericPrice);
-        String calculatedPrice = String.format("%.2f",(price+price2)).replace(",",".");
+        Float price = shopPage.getProductPriceFloatValue(shopPage.getProductPrice());
+        Float price2 = shopPage.getProductPriceFloatValue(shopPage.getSecondProductPrice());
+
+        String calculatedPrice = shopPage.addedPrice(price, price2);
 
         assertThat(shopPage.getCartPrice()).isEqualTo("£" +calculatedPrice+"");
         assertThat(shopPage.getItemcount()).isEqualTo(2+" items");

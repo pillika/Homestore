@@ -152,7 +152,6 @@ public class DetailedProductTest extends BaseTest {
         assertThat(productPage.getMessage()).isEqualTo(amount2 + "1" + amount + " × “" + productTitle + "” have been added to your cart.");
         assertThat(productPage.viewCartIsDisplayed()).isTrue();
     }
-
     @Test
     @DisplayName("Cant delete products amount completely Test")
     public void deleteAmountCompletely() {
@@ -173,23 +172,23 @@ public class DetailedProductTest extends BaseTest {
         assertThat(productPage.getMessage()).isEqualTo("“" + productTitle + "” has been added to your cart.");
         assertThat(productPage.viewCartIsDisplayed()).isTrue();
     }
- @ParameterizedTest
- @ValueSource(strings ={"*", "a"})
- @DisplayName("Invalid 'Amount' inputs Test")
- public void invalidAmountInputs(String invalidAmount) {
-     homeStorePage = new HomeStorePage(driver);
-     shopPage = new ShopPage(driver);
-     productPage = new ProductPage(driver);
+     @ParameterizedTest
+     @ValueSource(strings ={"*", "a"})
+     @DisplayName("Invalid 'Amount' inputs Test")
+     public void invalidAmountInputs(String invalidAmount) {
+         homeStorePage = new HomeStorePage(driver);
+         shopPage = new ShopPage(driver);
+         productPage = new ProductPage(driver);
 
-     homeStorePage.clickShopButton();
-     shopPage.clickProduct();
+         homeStorePage.clickShopButton();
+         shopPage.clickProduct();
 
-     String productTitle = productPage.getProductTitle();
+         String productTitle = productPage.getProductTitle();
 
-     productPage.clearAmount();
-     productPage.enterAmount(invalidAmount);
-     productPage.clickAddToCart();
-     assertThat(productPage.getMessage()).isEqualTo("“" + productTitle + "” has been added to your cart.");
-     assertThat(productPage.viewCartIsDisplayed()).isTrue();
+         productPage.clearAmount();
+         productPage.enterAmount(invalidAmount);
+         productPage.clickAddToCart();
+         assertThat(productPage.getMessage()).isEqualTo("“" + productTitle + "” has been added to your cart.");
+         assertThat(productPage.viewCartIsDisplayed()).isTrue();
  }
 }
